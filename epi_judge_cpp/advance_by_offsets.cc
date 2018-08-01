@@ -1,9 +1,15 @@
 #include <vector>
+#include <algorithm>
 #include "test_framework/generic_test.h"
 using std::vector;
 bool CanReachEnd(const vector<int>& max_advance_steps) {
-  // TODO - you fill in here.
-  return true;
+  const vector<int> a = max_advance_steps;
+  int length = a.size();
+  int cmax = 0;
+  for(int i = 0; i <= cmax && cmax < length; ++i){
+    cmax = std::max(cmax,a[i]+i);
+  }
+  return cmax >= length-1;
 }
 
 int main(int argc, char* argv[]) {
